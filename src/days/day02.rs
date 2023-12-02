@@ -1,8 +1,7 @@
 use std::fs::File;
-use std::cmp;
 use std::cmp::max;
-use std::io::{BufRead, BufReader, ErrorKind};
-use regex::{Error, Regex};
+use std::io::{BufRead, BufReader};
+use regex::Regex;
 
 const RED_CUBE_MAX : u16 = 12;
 const GREEN_CUBE_MAX : u16 = 13;
