@@ -11,8 +11,6 @@ pub fn solver() -> Result<(), std::io::Error>{
     let mut line_number : u32 = 0;
     let mut contador : u32 = 0;
 
-    //First part
-
     let lines : Vec<_> = reader.lines().collect();
 
     for line in lines{
@@ -59,7 +57,7 @@ fn get_line_digits(word : &str) -> Vec<&str>{
     let re = Regex::new(r"[1-9]|(one)|(two)|(three)|(four)|(five)|(six)|(seven)|(eight)|(nine)").unwrap();
     let mut line_digits : Vec<&str> = Vec::new();
 
-    for offset in 0..word.len(){ //Improve this to jump to next character.
+    for offset in 0..word.len(){
         let result = re.find_at(word, offset);
 
         if result.is_some() { line_digits.push(result.unwrap().as_str())}
