@@ -1,0 +1,11 @@
+[package]
+name = "AdventofCode2023"
+authors = ["Gustavo Rivas Gervilla"]
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "main"
+path = "src/main.rs"
+
+[dependencies]
