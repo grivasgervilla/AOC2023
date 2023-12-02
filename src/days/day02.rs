@@ -18,6 +18,7 @@ struct GameData {
 pub fn solver() -> Result<(), std::io::Error>{
     let reader = BufReader::new(File::open("input/2.txt")?);
     let mut valid_game_id_sum : u16 = 0;
+    let mut power_game_sum : u32 = 0;
 
     for line in reader.lines(){
         let game_info = parse_line(line);
@@ -27,9 +28,13 @@ pub fn solver() -> Result<(), std::io::Error>{
             game_info.blue_cubes <= BLUE_CUBE_MAX {
             valid_game_id_sum += game_info.game_id;
         }
+
+        power_game_sum += (game_info.red_cubes * game_info.green_cubes * game_info.blue_cubes) as u32;
+
     }
 
     println!("The sum of valid game ids is {valid_game_id_sum}.");
+    println!("The sum of the power of each game is {power_game_sum}");
 
     Ok(())
 }
