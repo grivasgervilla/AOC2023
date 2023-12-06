@@ -1,5 +1,5 @@
 mod days;
 
 fn main() {
-   let _ = days::day02::solver();
+   let _ = days::day03::solver();
 }
